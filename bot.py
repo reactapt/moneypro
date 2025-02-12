@@ -1,7 +1,7 @@
 import os
 from telegram import Update
-from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
-from users.models import EmployeeProfile, WorkTime
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext # Фильтры не читает
+from users.models import EmployeeProfile, WorkTime # Нужно исправить ошибку с импортированием, добавить ограничение команды раз в 1 день
 from django.utils import timezone
 
 # Токен вашего бота
