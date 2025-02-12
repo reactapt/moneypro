@@ -1,0 +1,16 @@
+<h2>Записи рабочего времени</h2>
+<ul>
+    {% for work_time in work_times %}
+        <li>
+            Сотрудник: {{ work_time.employee.user.username }}<br>
+            Начало: {{ work_time.start_time }}<br>
+            Конец: {{ work_time.end_time }}<br>
+            Продолжительность: {{ work_time.duration }}<br>
+            Скриншоты: <a href="{{ work_time.screenshots }}">Ссылка</a><br>
+            <form method="post" action="{% url 'approve_work_time' work_time.id %}">
+                {% csrf_token %}
+                <button type="submit">Подтвердить</button>
+            </form>
+        </li>
+    {% endfor %}
+</ul>

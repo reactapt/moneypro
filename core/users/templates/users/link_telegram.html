@@ -1,0 +1,7 @@
+<h2>Привязка Telegram</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="telegram_id">Ваш ID в Telegram:</label>
+    <input type="text" id="telegram_id" name="telegram_id" required>
+    <button type="submit">Привязать</button>
+</form>
